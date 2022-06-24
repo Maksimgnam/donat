@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donat</title>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
+     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        img{
+            width: 100%;
+            height: 100vh;
+        }
+    
+        
+
+        .wrap {
+            width: 100%;
+            min-height: 100vh;
+            
+           
+        }
+
+        .popup {
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            margin-top: -60px;
+            margin-left: -200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            z-index: 2;
+            box-shadow: 0 3px 5px #999;
+         
+        }
+        p{
+            position: absolute;
+            font-size: 25px;
+            color: rgb(34, 159, 204);
+
+            top: 90px;
+            padding: 10px;
+        }
+        .parag{
+            position: absolute;
+            color: rgb(235, 235, 22);
+            top: 120px;
+            padding: 10px;
+        }
+
+        .close {
+            outline: none;
+            position: absolute;
+            top: 450px;
+            width: 110px;
+            height: 30px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(34, 159, 204) ;
+            box-shadow: 0 3px 5px  yellow;
+            transition: 1s;
+
+        }
+        .close:hover{
+            box-shadow: 0 5px 7px  rgb(34, 159, 204);
+            background-color: yellow;
+        }
+
+        .fullPageBlock {
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .donatBtn{
+            left: 1300px;
+            top: 40px;
+            width: 110px;
+            height: 30px;
+            z-index: 5;
+            background-color: rgb(34, 159, 204) ;
+            transition: 2s;
+            box-shadow: 0 3px 5px  yellow;
+
+            position: absolute;
+            border-radius: 10px;
+            border: none;
+           
+        }
+        .donatBtn:hover{
+            box-shadow: 0 5px 7px  rgb(34, 159, 204);
+            background-color: yellow;
+        }
+        img{
+            position: absolute;
+            left: 40%;
+            width: 80px;
+            height: 80px;
+        }
+        .ukraine{ 
+            position: fixed;
+            left: 0;
+            width: 1900px;
+            height: 100vh;
+        }
+        .privat{
+            position: absolute;
+            top: 230px;
+            left: 20px;
+
+            width: 200px;
+            height: 200px;
+        }
+        .mono{
+            position: absolute;
+            top: 260px;
+            left: 195px;
+
+            width: 140px;
+            height: 140px;
+        }
+        .text{
+            position: absolute;
+            top: 200px;
+            left: 80px;
+            color: rgb(34, 159, 204);
+        }
+        .for{
+            position: absolute;
+            top: 200px;
+            left: 250px;
+            color: rgb(235, 235, 22);
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <img src="flag.jpg" alt="" class="ukraine">
+
+        <button id="donatBtn" class="donatBtn">Підтримай</button>
+        
+        <div class="popup" id="popup">
+            <img src="donate.png" alt="" >
+            <h1 class="text">Підтримай</h1>
+            <h1 class="for">через</h1>
+            <p>Підтримай наше ЗСУ.</p>
+            <p class="parag">Допоможи українській армії</p>
+
+            <button id="close" class="close">Закрити</button>
+            <img src="privat24.png" alt="" class="privat">
+            <img src="mono.png" alt="" class="mono">
+        </div>
+         <div class="fullPageBlock" id="fullPageBlock"></div>
+    </div>
+    <script>
+      
+
+
+        tippy('#donatBtn', {
+            content: '4444 4432 1233 2333',
+            placement: 'right',
+        });
+
+        $('#popup').hide(0);
+        $('#donatBtn').click(function() {
+            $('#popup').fadeIn(400);
+            $('#fullPageBlock').css('background-color', 'rgba(0, 0, 0, .6)');
+ 
+        })
+        $('#close').click(function() {
+            $('#popup').fadeOut(400);
+             $('#fullPageBlock').css('background-color', 'rgba(0, 0, 0, 0)');
+       
+        })
+    </script>
+</body></html>
